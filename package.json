@@ -4,7 +4,8 @@
   "description": "Real-time AI-powered camera surveillance with motion detection, object recognition, and anomaly alerts.",
   "main": "index.js",
   "scripts": {
-    "build": "npm install --prefix backend && npm install --prefix frontend  && npm run build --prefix frontend"
+    "start": "npm start --prefix backend",
+    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend"
   },
   "repository": {
     "type": "git",
