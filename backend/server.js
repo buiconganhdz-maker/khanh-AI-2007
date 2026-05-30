@@ -1,4 +1,7 @@
+import path from "path"
+
 require('dotenv').config();
+const __dirname = path.resolve();
 
 const express = require('express');
 const http = require('http');
@@ -51,11 +54,12 @@ app.use(helmet({
   contentSecurityPolicy: false
 }));
 
-app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:5173'],
-  credentials: true
-}));
-
+if (process.env.MODE_ENV === "production") {
+  app.use(cors({
+    origin: ['http://localhost:3000', 'http://localhost:5173'],
+    credentials: true
+  }));
+}
 app.use(cookieParser());
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
@@ -107,6 +111,15 @@ app.use('/api/auth', authRoutes);
 app.use('/api/cameras', cameraRoutes);
 app.use('/api/alerts', alertRoutes);
 app.use('/api/detections', detectionRoutes);
+
+if (process.env.NODE_ENV == 'production') {
+  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
+  app.get("*"(req, res) = {
+    res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+  });
+}
+
 
 // Health check
 app.get('/api/health', (req, res) => {
