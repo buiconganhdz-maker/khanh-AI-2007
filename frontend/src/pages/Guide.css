@@ -1,0 +1,534 @@
+/* ═══════════════════════════════════════════════════════
+   Guide Page Styles
+   ═══════════════════════════════════════════════════════ */
+
+.guide-page {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Search Bar ─────────────────────────────────────── */
+.guide-search {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.guide-search .search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.guide-search input {
+  width: 100%;
+  padding: 14px 16px 14px 44px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.guide-search input:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.guide-search input::placeholder {
+  color: var(--text-muted);
+}
+
+/* ─── Quick Nav Tabs ─────────────────────────────────── */
+.guide-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.guide-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.guide-tab:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.guide-tab.active {
+  background: rgba(0, 212, 255, 0.1);
+  border-color: rgba(0, 212, 255, 0.3);
+  color: var(--accent-cyan);
+}
+
+/* ─── Section Cards ──────────────────────────────────── */
+.guide-section {
+  margin-bottom: 24px;
+  animation: fadeInUp 0.4s ease-out;
+  animation-fill-mode: both;
+}
+
+.guide-section:nth-child(2) { animation-delay: 0.05s; }
+.guide-section:nth-child(3) { animation-delay: 0.1s; }
+.guide-section:nth-child(4) { animation-delay: 0.15s; }
+.guide-section:nth-child(5) { animation-delay: 0.2s; }
+.guide-section:nth-child(6) { animation-delay: 0.25s; }
+.guide-section:nth-child(7) { animation-delay: 0.3s; }
+.guide-section:nth-child(8) { animation-delay: 0.35s; }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.section-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.section-header:hover .section-icon {
+  transform: scale(1.1);
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.section-subtitle {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.section-chevron {
+  margin-left: auto;
+  color: var(--text-muted);
+  transition: transform 0.3s ease;
+}
+
+.section-chevron.open {
+  transform: rotate(180deg);
+}
+
+/* ─── Guide Table ────────────────────────────────────── */
+.guide-table-wrapper {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.guide-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.guide-table thead {
+  background: rgba(0, 212, 255, 0.06);
+}
+
+.guide-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+}
+
+.guide-table td {
+  padding: 11px 16px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.guide-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.guide-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.guide-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Feature name in table */
+.feature-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  font-size: 0.75rem;
+}
+
+/* ─── Step List ──────────────────────────────────────── */
+.step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.step-item {
+  display: flex;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.25s ease;
+}
+
+.step-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(139, 92, 246, 0.2));
+  color: var(--accent-cyan);
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.step-content h4 {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.step-content p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ─── Code Blocks ────────────────────────────────────── */
+.guide-code {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 5px;
+  background: rgba(0, 212, 255, 0.08);
+  color: var(--accent-cyan);
+  font-family: 'SF Mono', 'Cascadia Code', monospace;
+  font-size: 0.78rem;
+  border: 1px solid rgba(0, 212, 255, 0.15);
+}
+
+.guide-code-block {
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--accent-cyan);
+  font-family: 'SF Mono', 'Cascadia Code', monospace;
+  font-size: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow-x: auto;
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+/* ─── Keyboard Shortcuts ─────────────────────────────── */
+.kbd {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
+  font-family: 'SF Mono', 'Cascadia Code', monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ─── Badges in Guide ────────────────────────────────── */
+.guide-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.guide-badge.admin {
+  background: rgba(139, 92, 246, 0.15);
+  color: #a78bfa;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.guide-badge.all {
+  background: rgba(0, 212, 255, 0.1);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(0, 212, 255, 0.25);
+}
+
+.guide-badge.required {
+  background: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.guide-badge.optional {
+  background: rgba(34, 197, 94, 0.12);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+/* ─── Tip Callout ────────────────────────────────────── */
+.guide-tip {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border-left: 3px solid;
+  margin: 12px 0;
+}
+
+.guide-tip.info {
+  background: rgba(0, 212, 255, 0.06);
+  border-color: var(--accent-cyan);
+}
+
+.guide-tip.warning {
+  background: rgba(234, 179, 8, 0.06);
+  border-color: #eab308;
+}
+
+.guide-tip.danger {
+  background: rgba(239, 68, 68, 0.06);
+  border-color: #ef4444;
+}
+
+.guide-tip.success {
+  background: rgba(34, 197, 94, 0.06);
+  border-color: #22c55e;
+}
+
+.guide-tip-icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.guide-tip-content {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.guide-tip-content strong {
+  color: var(--text-primary);
+}
+
+/* ─── Architecture Diagram ───────────────────────────── */
+.architecture-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px 16px;
+  flex-wrap: wrap;
+}
+
+.arch-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  min-width: 120px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.arch-node:hover {
+  background: rgba(255, 255, 255, 0.07);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.arch-node-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+}
+
+.arch-node-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.arch-node-sub {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.arch-arrow {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  animation: arrowPulse 2s ease-in-out infinite;
+}
+
+@keyframes arrowPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* ─── Default Credentials Box ────────────────────────── */
+.credentials-box {
+  display: flex;
+  gap: 24px;
+  padding: 16px 20px;
+  border-radius: 10px;
+  background: rgba(139, 92, 246, 0.06);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  flex-wrap: wrap;
+}
+
+.credential-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.credential-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.credential-value {
+  font-family: 'SF Mono', 'Cascadia Code', monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #a78bfa;
+  padding: 2px 8px;
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 4px;
+}
+
+/* ─── Empty Search State ─────────────────────────────── */
+.guide-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 60px 20px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.guide-empty p {
+  font-size: 0.85rem;
+}
+
+/* ─── Responsive ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .architecture-flow {
+    flex-direction: column;
+  }
+
+  .arch-arrow {
+    transform: rotate(90deg);
+  }
+
+  .credentials-box {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .guide-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 4px;
+  }
+
+  .guide-tab {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .guide-table th,
+  .guide-table td {
+    padding: 8px 12px;
+  }
+}
